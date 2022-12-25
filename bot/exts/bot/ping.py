@@ -1,6 +1,5 @@
 from discord import ApplicationContext, Color, Embed
 from discord.ext.commands import Cog, Context, slash_command
-from typing import Union
 
 from bot.bot import Bot
 from bot.constants import EMOJI
@@ -12,7 +11,7 @@ class Ping(Cog):
         self.bot = bot
 
     @slash_command(name="ping", description="Get latency of bot.")
-    async def _command(self, ctx: Union[ApplicationContext, Context]) -> None:
+    async def _command(self, ctx: ApplicationContext) -> None:
         latency = round(self.bot.latency * 1000)
 
         embed = Embed(

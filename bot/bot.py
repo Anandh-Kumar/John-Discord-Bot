@@ -15,12 +15,6 @@ class Bot(commands.Bot):
     async def on_ready(self) -> None:
         print(f"{self.user} ready!")
 
-        status_updated = await self.update_server_status(True)
-        if status_updated:
-            print("Discord server status channel updated.")
-        else:
-            print("Failed to update discord server status channel")
-
     def load_extensions(self, names: list = None) -> None:
         """Load extensions from the bot
 
@@ -86,23 +80,5 @@ class Bot(commands.Bot):
                 errors.append(e)
         print(errors)
         return errors
-
-    async def update_server_status(self, status: bool = True) -> bool:
-        """Change name of status channel in discord server
-
-        Parameters
-        -----------
-        status: :class: 'bool'
-            The status of bot, True for online and False for offline.
-        """
-
-        status_channel = self.get_channel(
-            self.CONSTANTS["CHANNEL_CONSTANTS"]["STATUS_CHANNEL"]
-        )
-
-        if status and status_channel:
-            await status_channel.edit(name="🍏 Online")
-        else:
-            await status_channel.edit(name="🍎 Offline")
 
         return True

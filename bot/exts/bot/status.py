@@ -3,7 +3,6 @@ from discord.ext.commands import Cog, Context, slash_command
 from datetime import timedelta
 from psutil import cpu_percent, virtual_memory
 from time import time
-from typing import Union
 
 from bot.bot import Bot
 from bot.constants import EMOJI

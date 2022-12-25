@@ -18,7 +18,7 @@ intents = Intents.all()
 bot = Bot(
     command_prefix=CONSTANTS["BOT_CONSTANTS"]["COMMAND_PREFIX"],
     intents=intents,
-    activity=Activity(type=ActivityType.watching, name="Best Bot (season 1)"),
+    activity=Activity(type=ActivityType.listening, name=" music"),
     help_command=None,
 )
 bot.CONSTANTS = CONSTANTS
